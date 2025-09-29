@@ -52,10 +52,10 @@ const Dashboard = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-secondary-foreground">
-                  Sistema de Transporte
+                  Gestión de Rutas
                 </h1>
                 <p className="text-sm text-secondary-foreground/70">
-                  Optimización y Distribución
+                  Sistema de Optimización de Transporte
                 </p>
               </div>
             </div>
