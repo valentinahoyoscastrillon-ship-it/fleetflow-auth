@@ -12,7 +12,7 @@ const LOCKOUT_TIME = 5 * 60 * 1000; // 5 minutos
 const Login = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [email, setEmail] = useState("");
+  const [cedula, setCedula] = useState("");
   const [password, setPassword] = useState("");
   const [attempts, setAttempts] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
@@ -35,7 +35,7 @@ const Login = () => {
     // Obtener usuarios del localStorage
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const user = users.find(
-      (u: any) => u.email === email && u.password === password
+      (u: any) => u.cedula === cedula && u.password === password
     );
 
     if (user) {
@@ -104,13 +104,13 @@ const Login = () => {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="email">Correo Electrónico</Label>
+              <Label htmlFor="cedula">Número de Cédula</Label>
               <Input
-                id="email"
-                type="email"
-                placeholder="correo@ejemplo.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="cedula"
+                type="text"
+                placeholder="1234567890"
+                value={cedula}
+                onChange={(e) => setCedula(e.target.value)}
                 required
                 disabled={isLocked}
               />
